@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Hello World</title>
+		
+		<style>
+			table {
+			    font-family: arial, sans-serif;
+			    border-collapse: collapse;
+			    width: 20%;
+			}
+			
+			td, th {
+			    border: 1px solid #dddddd;
+			    text-align: left;
+			    padding: 8px;
+			}
+			
+			tr:nth-child(even) {
+			    background-color: #dddddd;
+			}
+			
+			#divListarPessoa{
+				float: left;
+				width: 50%;
+			}
+			
+			#divCadastrarPessoa{
+				margin-left: 50%;
+				width: 50%;
+			}
+			
+			#divAtualizarPessoa{
+				margin-left: 50%;
+				width: 50%;
+			}
+			
+			#divDeletarPessoa{
+				float: left;
+				width: 50%;
+			}
+			
+		</style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="../listaPessoas.js">        
+        </script>
+	</head>
+	<body>
+		<div id="divListarPessoa">
+		<h3>Todas pessoas cadastradas:</h3>
+		<table id="tabelaPessoa">
+			<tbody>
+			</tbody>
+		</table>
+        </div>
+        <div id="divCadastrarPessoa">
+	        <h3>Adicione uma nova pessoa:</h3>
+	        <form action="/pessoas/cadastrarPessoa/" method="POST">
+	              <label for="nome">Nome:</label> <input type="text" name="nome" size="50"></input><br />  
+	              <label for="idade">Idade:</label> <input type="text" name="idade" size="15"></input><br /> 
+	              <br /> <input type="submit" value="Cadastrar"></input>
+	        </form>
+	    </div>
+	    <div id="divAtualizarPessoa">
+	        <h3>Atualizar Pessoa por id:</h3>
+	        <form action="/pessoas/atualizarPessoa/" method="POST">
+	              <label for="idPessoa">Id:</label> <input type="text" name="idPessoa" size="15"></input><br /> 
+	               <label for="nome">Nome:</label> <input type="text" name="nome" size="50"></input><br />  
+	              <label for="idade">Idade:</label> <input type="text" name="idade" size="15"></input><br /> 
+	              <br /> <input type="submit" value="Atualizar"></input>
+	        </form>
+	    </div>
+	    <div id="divDeletarPessoa">
+	        <h3>Deletar Pessoa por id:</h3>
+	        <form action="/pessoas/deletarPessoa/" method="POST">
+	              <label for="idPessoa">Id:</label> <input type="text" name="idPessoa" size="15"></input><br /> 
+	              <br /> <input type="submit" value="Deletar"></input>
+	        </form>
+	    </div>
+	</body>
+</html>
